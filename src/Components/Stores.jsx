@@ -60,7 +60,7 @@ let change=(index)=>{
             <p className='capitalize text-[1.5vh] pt-[.1rem] pl-[.4rem] xl:text-[3vh] xl:font-medium'>200+ experience centers</p>
             </div>
         <div className='flex ml-[6vw] xl:pt-[.8vh]'>
-        <img src="/photos/Star3.jpg" alt="img paras not available"  className='h-[2.6vh] xl:h-[4vh]' />
+        <img src="/photos/Star3.jpg" alt="img not available"  className='h-[2.6vh] xl:h-[4vh]' />
             <p className='capitalize text-[1.5vh] pt-[.1rem] pl-[.5rem] xl:text-[3vh] xl:font-medium xl:pt-[0]'>4.5+ star ratings</p>
         </div>
       </div>
