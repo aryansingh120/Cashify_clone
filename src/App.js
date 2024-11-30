@@ -4,6 +4,7 @@ import Stores from "./Components/Stores"
 import Questions from "./Components/Questions"
 import Article from "./Components/Article"
 import Footer from "./Components/Footer"
+import Footer2 from "./Components/Footer2";
 
 
 
@@ -16,6 +17,7 @@ function App() {
       <Questions/>
       <Article/>
       <Footer/> 
+      {/* <Footer2/> */}
      
      
     </div>

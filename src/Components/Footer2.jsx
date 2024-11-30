@@ -7,13 +7,13 @@ const Footer2 = () => {
     <div className='bg-[#F7F7F7] px-[2vw]'>
         <div className='md:flex  '>
             
-            <div className='md:flex '>
+            <div className='md:flex border-2 border-[blue]'>
              
               <div className=' md:w-[13rem] md:flex-shrink-0 '>
               <div className=' h-[5rem] overflow-hidden '>
               <img src="/photos/cashify3-remove.png" alt="img not available" className=' h-[10rem] mt-[-2rem] flex-shrink-0'  />
               </div>
-              <div className='flex pl-[.5rem] md:flex-col'>
+              <div className='flex pl-[.5rem] md:flex-col border-2 border-black'>
                 <p className='mr-[1rem] mt-[.2rem] flex-shrink-0 text-[#707070] font-bold'>Follow us on</p>
 
                 <div className=' flex gap-[1rem] md:mt-[1rem] '>
@@ -27,7 +27,8 @@ const Footer2 = () => {
 
               </div>
             </div>
-              <div className='border-b-2 md:border-none py-[1rem]  md:w-[20%]'>
+              <div className=' py-[1rem] border-2 border-black md:w-[20%]'>
+                   {/* <p className='text-[#707070] font-bold ml-[.5rem] mb-[1rem]'>Services</p> */}
                    <ul>
                    {
                     textArr[0].map((item,index)=>{
@@ -37,8 +38,9 @@ const Footer2 = () => {
                    </ul>
             </div>
 
-   <div className='flex md:w-[75%] md:justify-between md:flex-row flex-col'>
+   <div className='flex border-2 border-[red] md:w-[75%] md:justify-between md:flex-row flex-col'>
             <div className='border-b-2 md:border-none py-[1rem]'>
+            {/* <p className='text-[#707070] font-bold mb-[1rem] ml-[.5rem]'>Company</p> */}
                    <ul>
                    {
                     textArr[1].map((item,index)=>{
@@ -48,6 +50,7 @@ const Footer2 = () => {
                    </ul>
             </div>
             <div className='border-b-2 md:border-none  py-[1rem]'>
+            {/* <p className='text-[#707070] font-bold mb-[1rem] ml-[.5rem]'>Sell Device</p> */}
                    <ul>
                    {
                     textArr[2].map((item,index)=>{
@@ -57,6 +60,7 @@ const Footer2 = () => {
                    </ul>
             </div>
             <div className='border-b-2 md:border-none py-[1rem]'>
+            {/* <p className='text-[#707070] font-bold mb-[1rem] ml-[.5rem]'>Help & Support</p> */}
                    <ul>
                    {
                     textArr[3].map((item,index)=>{
@@ -66,6 +70,7 @@ const Footer2 = () => {
                    </ul>
             </div>
             <div className='border-b-2 md:border-none  py-[1rem] flex flex-col md:items-center'>
+            {/* <p className='text-[#707070] font-bold mb-[1rem] ml-[.5rem]'>More Info</p> */}
                    <ul>
                    {
                     textArr[4].map((item,index)=>{
