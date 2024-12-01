@@ -1,23 +1,18 @@
-import Navbar from "./Components/Navbar";
 import Services from "./Components/Services";
 import Stores from "./Components/Stores"
 import Questions from "./Components/Questions"
 import Article from "./Components/Article"
-import Footer from "./Components/Footer"
-import Footer2 from "./Components/Footer2";
-
-
+import { Route,Routes } from "react-router-dom";
+import NearbyStore from "./Components/NearbyStore";
 
 function App() {
   return (
     <div className="">
-      <Navbar/>
-      <Services/>
-      <Stores/>
-      <Questions/>
-      <Article/>
-      <Footer/> 
-      {/* <Footer2/> */}
+      <Routes>
+      <Route path={"/"} element={<> <Services/> <Stores/> <Questions/> <Article/> </>}/>
+             <Route path={"/details"} element={ <NearbyStore/>}/>
+             </Routes>
+ 
      
      
     </div>

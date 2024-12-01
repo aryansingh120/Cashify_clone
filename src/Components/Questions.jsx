@@ -2,11 +2,9 @@ import React, { useState } from 'react'
 
 const Questions = () => {
     let [count, setCount]=useState(0)
-    let [color,setColor]=useState("bg-[#E5E5E5]")
 
     let btnArr=["Sellsmart","Smartbuy","Repair/Others"];
 
-    //  let queArr=[["What if my pickup was delayed?","My mobile phone is not listed on the website.What to do now?","How to sell your old mobile phone in three steps"],["What is refurbished products?","What is the return policy","Do you have delivery in all places or only in particular locations?"],["Is repair facility only available at home?","What is Cashify repair?","how cashify is repair different from others ?"]];
 
      let ansArr=[
       [{que:"What if my pickup was delayed?",ans:"Usually, it doesn’t happen, it may happen due to some unforeseen circumstances. But we will update you with the real-time pickup status. In case of delay, please contact us by email at support@cashify.in. We shall respond to you within one business day and issue a refund/ fresh order."},{que:"My mobile phone is not listed on the website.What to do now?",ans:"In such cases, please contact us by email at support@cashify.in. We shall respond to you within one business day and try to rectify the issue as soon as possible."},{que:"How to sell your old mobile phone in three steps?",ans:"When it comes to selling your old mobile phone in a super easy and convenient fashion, you can trust none but Cashify. Here are three hassle-free ways.On the Cashify website or app, under the Sell phone category, choose the brand name and model. Add a few details related to the phone to get the exact value.Schedule a doorstep pickup for your phone as per your preferred date and time slot.Receive instant cash at your doorstep once the pickup is complete."}],

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Footer2 = () => {
+const Footer = () => {
   let imgArr=["/photos/twitter.webp","/photos/fb.webp","/photos/insta.webp","/photos/youtube.webp"];
   let textArr=[["Services","Sell Phone","Sell Television","Sell Smart Watch","Sell Smart Speakers","Sell DSLR Camera","Sell Earbuds","Repair Phone","Buy Phone","Recycle Phone","Finr New Phone","Partner With Us"],["Company","About us","Careers","Articles","Press Releses","Become cashify Partner","Become supersale partner"],["Sell Device","Mobile Phone","laptop","tablet","imac","gaming consoles"],["Help & Support","FAq","contact us","Warrenty policy","refund policy"],["More Info","Terms & conditions","privacy policy","terms of use","e-waste policy","coolie policy","gdpr compliance","what is refurbished","device safty"]]
   return (
@@ -84,7 +84,7 @@ const Footer2 = () => {
             </div>       
         </div>
         {/* ****************************************************************** */}
-          <div className='flex flex-col gap-[2rem] items-center md:flex-row md:border-y-2 py-[1rem] border-2 border-black'>
+          <div className='flex flex-col gap-[2rem] items-center md:flex-row md:border-y-2 py-[1rem] '>
           <div className='pl-[1rem] md:w-[70%] md:text-[12px] font-medium'>
             <p className='text-[#707070]'>Registered Office:</p>
             <p className=''>Manak Waste Management Pvt Ltd.| B-39, 1st Floor, Middle Circle, Connaught Place, New Delhi-110001, India, Support-7290068900 | CIN: U27205DL2009PTC190441 </p>
@@ -102,4 +102,4 @@ const Footer2 = () => {
   )
 }
 
-export default Footer2
+export default Footer

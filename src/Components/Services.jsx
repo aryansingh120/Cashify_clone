@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import "./Service.css"
-import { useRef } from 'react';
 
 const Services = () => {
     let imgArr=[{img1:"/photos/mobile1.webp",text1:"Sell Phone"},{img1:"/photos/mobile2.webp",text1:"Buy Phone"},{img1:"/photos/laptop.webp",text1:"Buy Laptops"},{img1:"/photos/mobile3.webp",text1:"Repair Phone"},{img1:"/photos/mobile4.webp",text1:"Find New Phone"},{img1:"/photos/home.webp",text1:"Nearby Stores"},{img1:"/photos/dustbin.webp",text1:"Recycle"},{img1:"/photos/watch.webp",text1:"Buy Smartwatches"}];
@@ -14,24 +13,6 @@ const Services = () => {
     let icon=<svg class="h-4 w-4 text-black-500 inline "  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M18 6h-11h3a4 4 0 0 1 0 8h-3l6 6" />  <line x1="7" y1="10" x2="18" y2="10" /></svg>;
 
     let icon2= <svg class="h-6 w-5 text-black-500 inline "  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M18 6h-11h3a4 4 0 0 1 0 8h-3l6 6" />  <line x1="7" y1="10" x2="18" y2="10" /></svg>; 
-
-    let divRef=useRef(null)
-
-    let scrollImg=()=>{
-        
-        divRef.current.background="red";
-        console.log( divRef.current);
-        
-       
-       
-        
-        
-    }
-
-    let run=()=>{
-    
-        
-    }
     
   return (
     <div className='mx-[2vw]'>
@@ -55,8 +36,10 @@ const Services = () => {
             img2Arr.map((item)=>{
                 return (
                     <div className=' w-[22.6%] flex flex-col overflow-hidden md:w-[11%]'>
+                    <Link to={"/details"}>
                         <img src={item.img1} alt="img not available" className='mb-[1.4vh]' />
                         <p className='text-center text-[12px] font-bold    md:font-medium'>{item.text1}</p>
+                    </Link>
                     </div>
                 )
             })
@@ -68,7 +51,7 @@ const Services = () => {
 
 <p className=' mt-[3rem] text-[20px] font-bold md:text-[22px] xl:text-[25px] '>Buy Referbuished Phones</p>
 <div className='flex'>
-<p className='inline-block ' onClick={scrollImg}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-10  bg-[white] rounded-full sm:size-14 transform absolute mt-[11rem]">
+<p className='inline-block '><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-10  bg-[white] rounded-full sm:size-14 transform absolute mt-[11rem]">
   <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-4.28 9.22a.75.75 0 0 0 0 1.06l3 3a.75.75 0 1 0 1.06-1.06l-1.72-1.72h5.69a.75.75 0 0 0 0-1.5h-5.69l1.72-1.72a.75.75 0 0 0-1.06-1.06l-3 3Z" clip-rule="evenodd" />
 </svg>
 </p>
@@ -78,7 +61,8 @@ const Services = () => {
     {
         mobileArr.map((item,index)=>{
             return (
-                <div className={`border rounded-xl w-[13rem] flex-shrink-0 overflow-hidden sm:w-[16rem] ` } ref={divRef} key={index} >
+                <div className={`border rounded-xl w-[13rem] flex-shrink-0 overflow-hidden sm:w-[16rem] ` } key={index} >
+                <Link to={"/details"}>
                     <button className=' flex text-[10px] font-extrabold bg-[#F4B146] py-[1vh] px-[2vw] rounded-br-[1.5rem]  transform sm:py-[1.5vh] sm:text-[13px]'>{icon}{item.text1}</button>
                     <img src={item.img1} alt="img not available" className='h-[19vh] ml-[4vw] mt-[-2vh] sm:h-[22vh]' />
 <div className='pl-[3vw] sm:pl-[2vw] '>
@@ -98,6 +82,7 @@ const Services = () => {
                     <p className='inline-block ml-[.5vw] transform translate-y-[-.3vh]'>{icon2}</p>
                     <p className='inline-block font-bold sm:text-[3vh] '>{item.text9}</p>
                     </div>
+                    </Link>
                     
                     </div>
             )

@@ -27,22 +27,18 @@ const NearbyStore = () => {
 let icon5=<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
 </svg>
-
-
-
-
-let [count,setCount]=useState(["Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal", "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli and Daman and Diu", "Lakshadweep", "Delhi", "Puducherry", "Ladakh", "Jammu and Kashmir"]);
+let count=["Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal", "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli and Daman and Diu", "Lakshadweep", "Delhi", "Puducherry", "Ladakh", "Jammu and Kashmir"]
 let [flag,setFlag]=useState(count);
 let [input,setInput]=useState("");
 let [display,setDisplay]=useState("hidden")
    
-    useEffect(()=>{
-       let filterArr=count.filter((item)=>item.toLowerCase().startsWith(input.toLowerCase()));
-       
-       (filterArr.length>=1)?setFlag(filterArr):setFlag(["not found"])  
-        
-        
-    },[input])
+useEffect(()=>{
+    let filterArr=count.filter((item)=>item.toLowerCase().startsWith(input.toLowerCase()));
+    
+    (filterArr.length>=1)?setFlag(filterArr):setFlag(["not found"])  
+     
+     
+ },[input])
 
     
    let run=(index)=>{
@@ -53,12 +49,12 @@ let [display,setDisplay]=useState("hidden")
    } 
     let [q,setQ]=useState(0)  
    let change=()=>{
-    if(q==0)
+    if(q===0)
     {
         setDisplay("block");
         setQ(1)
     }
-    else if(q==1)
+    else if(q===1)
     {
         setDisplay("hidden");
         setQ(0)

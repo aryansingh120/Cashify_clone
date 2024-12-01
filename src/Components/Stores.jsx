@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Marquee from 'react-marquee-slider';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 // import paras from '../Assets/Star-x-2.webp'
 
 
@@ -23,8 +24,6 @@ let mobileArr=[[{text1:"28,400 OFF",img1:"/photos/phone1.webp",text2:"Apple ipho
     {text1:"21,000 OFF",img1:"/photos/mobile5.webp",text2:"Apple iphone 11-Refurbished",img2:["/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp"],text3:"(365)",text4:"apple Bumper Sale",text5:"-53%",text6:"18,499",text7:"39,499",text8:"effective price",text9:"17,944"},{text1:"32,400 OFF",img1:"/photos/mobile6.webp",text2:"Apple iphone 13-Refurbished",img2:["/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp"],text3:"(239)",text4:"apple Bumper Sale",text5:"-50%",text6:"46,099",text7:"70,499",text8:"effective price",text9:"20,316"},{text1:"48,400 OFF",img1:"/photos/mobile7.webp",text2:"Apple iphone 12-Refurbished",img2:["/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp"],text3:"(199)",text4:"apple Bumper Sale",text5:"-47%",text6:"26,099",text7:"58,499",text8:"effective price",text9:"28,316"},{text1:"28,400 OFF",img1:"/photos/mobile8.webp",text2:"Apple iphone 12-Refurbished",img2:["/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp"],text3:"(199)",text4:"apple Bumper Sale",text5:"-49%",text6:"25,099",text7:"52,499",text8:"effective price",text9:"30,316"},{text1:"28,400 OFF",img1:"/photos/ip1.webp",text2:"Apple iphone 17-Refurbished",img2:["/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp"],text3:"(199)",text4:"apple Bumper Sale",text5:"-51%",text6:"29,099",text7:"60,499",text8:"effective price",text9:"24,316"}],[{text1:"28,400 OFF",img1:"/photos/lap10.webp",text2:"MacBook Pro 2023 A2779 (Apple M2 Pro Chip 14 Inch)- Refurbished",img2:["/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp"],text3:"(199)",text4:"Limited time Sale",text5:"-55%",text6:"31,099",text7:"55,499",text8:"effective price",text9:"26,316"},
     {text1:"21,000 OFF",img1:"/photos/lap3.webp",text2:"MacBook Pro 2021 a2442 (Apple M1 Pro Chip 14 Inch)- Refurbished",img2:["/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp"],text3:"(365)",text4:"Limited time Sale",text5:"-53%",text6:"18,499",text7:"39,499",text8:"effective price",text9:"17,944"},{text1:"32,400 OFF",img1:"/photos/lap11.webp",text2:"MacBook Pro 2019 (Touch Bar, Four Thunderbolt 3 ports) A1990 (Intel Core i9",img2:["/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp"],text3:"(239)",text4:"Limited time Sale",text5:"-50%",text6:"46,099",text7:"70,499",text8:"effective price",text9:"20,316"},{text1:"48,400 OFF",img1:"/photos/lap12.webp",text2:"MacBook Air 2024 A3113 (Apple M3 Chip 13.3 Inch)- Refurbished",img2:["/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp"],text3:"(199)",text4:"Limited time Sale",text5:"-47%",text6:"26,099",text7:"58,499",text8:"effective price",text9:"28,316"},{text1:"28,400 OFF",img1:"/photos/lap13.webp",text2:"MacBook Pro 2020 A2338 (Apple M1 Chip 13.3 Inch)- Refurbished",img2:["/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp"],text3:"(199)",text4:"Limited time Sale",text5:"-49%",text6:"25,099",text7:"52,499",text8:"effective price",text9:"30,316"},{text1:"28,400 OFF",img1:"/photos/lap14.webp",text2:"Apple MacBook Pro 2020 Touch Bar, Four Thunderbolt 3 ports (13'' Intel Core",img2:["/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp"],text3:"(199)",text4:"Limited time Sale",text5:"-51%",text6:"29,099",text7:"60,499",text8:"effective price",text9:"24,316"}],[{text1:"28,400 OFF",img1:"/photos/watch8.webp",text2:"Apple Watch Series 5 (40mm, GPS+Cellular)- Refurbished",img2:["/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp"],text3:"(199)",text4:"Lowest Price",text5:"-55%",text6:"31,099",text7:"55,499",text8:"effective price",text9:"26,316"},
     {text1:"21,000 OFF",img1:"/photos/watch9.webp",text2:"Apple Watch Series 5 (44mm, GPS+Cellular)- Refurbished",img2:["/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp"],text3:"(365)",text4:"Lowest Price",text5:"-53%",text6:"18,499",text7:"39,499",text8:"effective price",text9:"17,944"},{text1:"32,400 OFF",img1:"/photos/watch3.webp",text2:"Apple Watch SE - 1st Gen (40mm, GPS Only)- Refurbished",img2:["/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp"],text3:"(239)",text4:"Lowest Price",text5:"-50%",text6:"46,099",text7:"70,499",text8:"effective price",text9:"20,316"},{text1:"48,400 OFF",img1:"/photos/watch10.webp",text2:"MacBook Air 2024 A3113 (Apple M3 Chip 13.3 Inch)- Refurbished",img2:["/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp"],text3:"(199)",text4:"Lowest Price",text5:"-47%",text6:"26,099",text7:"58,499",text8:"effective price",text9:"28,316"},{text1:"28,400 OFF",img1:"/photos/watch5.webp",text2:"MacBook Pro 2020 A2338 (Apple M1 Chip 13.3 Inch)- Refurbished",img2:["/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp"],text3:"(199)",text4:"Lowest Price",text5:"-49%",text6:"25,099",text7:"52,499",text8:"effective price",text9:"30,316"},{text1:"28,400 OFF",img1:"/photos/watch11.webp",text2:"Apple MacBook Pro 2020 Touch Bar, Four Thunderbolt 3 ports (13'' Intel Core",img2:["/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp","/photos/star.webp"],text3:"(199)",text4:"Lowest Price",text5:"-51%",text6:"29,099",text7:"60,499",text8:"effective price",text9:"24,316"}]];
-
-    let icon=<svg class="h-4 w-4 text-black-500 inline "  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M18 6h-11h3a4 4 0 0 1 0 8h-3l6 6" />  <line x1="7" y1="10" x2="18" y2="10" /></svg>;
 
     let icon2= <svg class="h-6 w-5 text-black-500 inline "  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M18 6h-11h3a4 4 0 0 1 0 8h-3l6 6" />  <line x1="7" y1="10" x2="18" y2="10" /></svg>;
 
@@ -49,9 +48,13 @@ let change=(index)=>{
 
   return (
     <div className='mt-[2rem] mx-[2vw] xl:mt-[3rem]'>
-        <div className='flex justify-between'>
+        <div className='flex justify-between items-center'>
             <div><p className='capitalize text-[2.3vh] font-bold xl:text-[4.1vh]'>our exclusive stores</p></div>
-            <div><p className='text-[#42C8B7] text-[2vh] medium xl:text-[2.6vh]'>View all stores</p></div>
+            <div>
+            <Link to={"/details"}>
+            <p className='text-[#42C8B7] text-[2vh] medium xl:text-[2.6vh]'>View all stores</p>
+            </Link>
+            </div>
         </div>
         {/* ******************* */}
       <div className='flex pt-[1rem]'>
@@ -89,11 +92,13 @@ let change=(index)=>{
               
               return (
                 <div className={`bg-[white] rounded-lg p-6 w-[17rem] pr-2 pb-[0] flex-shrink-0 ${margin()}  xl:pr-[1vw] xl:w-[22rem] `}>
+                <Link to={"/details"}>
                   <button className={`uppercase text-[#fcfbfb] font-bold py-[1vh] px-[3.5vw] rounded-lg bg-[#f70399] text-[1.5vh] xl:text-[2vh] xl:py-[1.3vh]`}>{item.dist}</button>
                   <p className={`font-bold text-[1.5vh] ${marginTop()} xl:text-[2.4vh]`}>{item.heading}</p>
                   <p className={`text-[#5a5959] text-[1.3vh] font-bold ${marginTop()} xl:text-[2vh] `}>{item.address}</p>
                   <p className={`text-[#5a5959] text-[1.3vh] font-bold ${marginTop()} xl:text-[2vh]`}>{item.time}</p>
                   <p className={`text-[#42C8B7] font-bold ${marginTop()} xl:text-[3vh]`}>{item.details}</p>
+                  </Link>
 
                 </div>
               )
@@ -197,6 +202,7 @@ let change=(index)=>{
   {
     mobileArr[count].map((item)=>{
       return (
+        <Link to={"/details"}>
         <div className=' rounded-xl w-[13rem] flex-shrink-0  overflow-hidden sm:w-[16rem] border'>
           <button className='flex text-[10px] font-extrabold bg-[#F4B146] py-[1vh] px-[2vw] rounded-br-[1.5rem]  transform sm:py-[1.5vh] sm:text-[13px]'>{item.text1}</button>
           <img src={item.img1} alt="img not available" className='h-[19vh] ml-[4vw] mt-[-2vh] sm:h-[22vh]' />
@@ -215,8 +221,8 @@ let change=(index)=>{
           <p className='capitalize inline-block text-[1.8vh] text-[#858484] sm:text-[2vh] sm:font-medium'>{item.text8}</p>
           <p className='inline-block ml-[.5vw] transform translate-y-[-.3vh]'>{icon2}</p>
           <p className='inline-block font-bold xl:text-[3vh] '>{item.text9}</p>
-
         </div>
+          </Link>
       )
     })
   }
@@ -249,8 +255,10 @@ let change=(index)=>{
             img2Arr.map((item)=>{
               return (
                 <div className='flex flex-col flex-shrink-0 '>
+                <Link to={"/details"}>
                   <img src={item.img1} alt="img not available" className='w-[18rem] sm:w-[20rem] h-[8.9rem] sm:h-[11rem] rounded-md filter brightness-50'/>
                   <p className='font-extrabold text-[14px] text-[white] ml-[.7rem] transform translate-y-[-1.3rem]'>{item.text1}</p>
+                </Link>
                 </div>
               )
             })
@@ -282,8 +290,11 @@ let change=(index)=>{
             img3Arr.map((item)=>{
               return (
                 <div className='flex flex-col flex-shrink-0 '>
+                <Link to={"/details"}>
                   <img src={item.img1} alt="img not available" className='w-[18rem] sm:w-[20rem] h-[8.9rem] sm:h-[11rem] rounded-md filter brightness-75'/>
                   <p className='font-extrabold text-[14px] text-[white] ml-[.7rem] transform translate-y-[-1.3rem]'>{item.text}</p>
+                  </Link>
+
                 </div>
               )
             })
