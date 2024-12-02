@@ -16,35 +16,20 @@ const Questions = () => {
         setCount(index);
 }
 
-let [flag,setFlag]=useState(0);
-let [display,setDisplay]=useState("hidden");
-let [rotate,setRotate]=useState('')
+let [rotate,setRotate]=useState(true)
 let show=()=>{
-  if(flag===0)
-  {
-       setDisplay("block")
-       setFlag(1)
-       setRotate("rotate-45")
-      // console.log(ansArr[count][index].ans);
-      
+
+       setRotate(!rotate)
+       console.log(rotate);
        
   }
-  else if(flag===1)
-  {
-    setDisplay("hidden")
-    setRotate("")
-
-    setFlag(0)
-  }
-
-}
 
 
   return (
     <div className='mx-[2vw]'>
   <div className='mt-[1rem] sm:flex justify-between'>
     <div className='text-[1.1rem] sm:text-[1.8rem] font-bold'>Frequenty Asked Questions</div>
-    <div>
+    <div className=''>
       {
         btnArr.map((item,index)=>{         
            return (
@@ -58,22 +43,31 @@ let show=()=>{
   
   <div className='mt-[1rem]'>
     {
+       
+
         ansArr[count].map((item,index)=>{
             return (
-                <div >
-                    <div className=' border-b-2 flex justify-between pr-[13px] pb-[.7rem] sm:pb-[1.5rem] cursor-pointer' onClick={show}>
-                    <div className='pt-[6px] w-[90%]'>
-                        <p className='block text-[14px] sm:text-[18px] text-start font-bold  '>{item.que}</p>
-                    </div>
-                <div>
-                        <p className={`text-[20px] ${rotate}`}>+</p>
-                </div>
-                    </div>
-                    <p className={`${display}`}>{item.ans}</p>
-                  
-                </div>
+                <details className='border-b-2 pr-[13px] pb-[.7rem] sm:pb-[1.5rem] cursor-pointer' onClick={show}>
+                  <summary className='flex justify-between'>
+                  <p className='block text-[14px] sm:text-[18px] text-start font-bold  '>{item.que}</p>
+                  <p className={`text-[20px] ${(rotate==false)? "rotate-[45deg]": "rotate-[90deg]"}`}>+</p>
+                  </summary>
+                  <p>{item.ans}</p>
+                </details>
+
+
+
+                
+
+
+
+
+
+                    
             )
         })
+
+        
     }
   </div>
   <div className='flex justify-center pt-[.5rem]'>
@@ -85,3 +79,10 @@ let show=()=>{
 }
 
 export default Questions
+
+
+
+
+
+
+
