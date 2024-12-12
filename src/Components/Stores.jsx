@@ -91,7 +91,7 @@ let change=(index)=>{
               let marginTop=()=>"mt-[.3rem]"
               
               return (
-                <div className={`bg-[white] rounded-lg p-6 w-[17rem] pr-2 pb-[0] flex-shrink-0 ${margin()}  xl:pr-[1vw] xl:w-[22rem] `}>
+                <div className={`bg-[white] rounded-lg p-6 w-[17rem] pr-2 pb-[0] flex-shrink-0 ${margin()}  xl:pr-[1vw] xl:w-[22rem] `} key={index}>
                 <Link to={"/details"}>
                   <button className={`uppercase text-[#fcfbfb] font-bold py-[1vh] px-[3.5vw] rounded-lg bg-[#f70399] text-[1.5vh] xl:text-[2vh] xl:py-[1.3vh]`}>{item.dist}</button>
                   <p className={`font-bold text-[1.5vh] ${marginTop()} xl:text-[2.4vh]`}>{item.heading}</p>
@@ -146,9 +146,9 @@ let change=(index)=>{
 
 <div className='bg-[#0f0f0f] flex overflow-x-scroll paras gap-[1.2rem] pl-[2px] pt-[4rem] pb-[3rem]'>
         {
-          reviewArr.map((item)=>{
+          reviewArr.map((item,index)=>{
             return (
-              <div className='bg-[#ffffff] w-[17rem] sm:w-[20rem] rounded-2xl px-[1rem] flex-shrink-0 pb-[2rem]'>
+              <div className='bg-[#ffffff] w-[17rem] sm:w-[20rem] rounded-2xl px-[1rem] flex-shrink-0 pb-[2rem]' key={index}>
                 <img src={item.img1} alt="img not available" className='h-[2rem]' />
                 <p className='font-bold text-[12px] sm:text-[15px] mt-[1.5rem] h-[6rem] sm:h-[8rem]'>{item.review}</p>
 
@@ -176,8 +176,8 @@ let change=(index)=>{
 <div className='bg-[#42C8B7] overflow-x-scroll flex py-[.3rem] sm:py-[1rem] paras '>
   <Marquee velocity={`${velocity}`}>
   {
-    imgArr.map((item)=>{
-      return <img src={item} alt="img not available" className='inline h-[5vh] ml-[5rem]  object-cover'/>
+    imgArr.map((item,index)=>{
+      return <img src={item} key={index} alt="img not available" className='inline h-[5vh] ml-[5rem]  object-cover'/>
     })
   }
   </Marquee>
@@ -188,7 +188,7 @@ let change=(index)=>{
 <div className='border-b'>
 {
   btnArr.map((item,index)=>{
-    return <button className={`text-[#707070] font-medium px-[1rem] border-b-[3px] sm:text-[1.5rem] sm:px-[4rem]  ${index===count? "border-[#42C8B7]":"border-transparent"}` }onClick={()=>change(index)}>{item}</button>
+    return <button key={index} className={`text-[#707070] font-medium px-[1rem] border-b-[3px] sm:text-[1.5rem] sm:px-[4rem]  ${index===count? "border-[#42C8B7]":"border-transparent"}` }onClick={()=>change(index)}>{item}</button>
   })
 }
 </div>
@@ -200,16 +200,16 @@ let change=(index)=>{
 
 <div className=' flex overflow-x-scroll mt-[1.5rem] gap-[2rem] paras  '>
   {
-    mobileArr[count].map((item)=>{
+    mobileArr[count].map((item,index)=>{
       return (
-        <Link to={"/details"}>
+        <Link to={"/details"} key={index}>
         <div className=' rounded-xl w-[13rem] flex-shrink-0  overflow-hidden sm:w-[16rem] border'>
           <button className='flex text-[10px] font-extrabold bg-[#F4B146] py-[1vh] px-[2vw] rounded-br-[1.5rem]  transform sm:py-[1.5vh] sm:text-[13px]'>{item.text1}</button>
           <img src={item.img1} alt="img not available" className='h-[19vh] ml-[4vw] mt-[-2vh] sm:h-[22vh]' />
           <p className='font-extrabold text-[2.2vh] line-clamp-2'>{item.text2}</p>
           {
-                        item.img2.map((item)=>{
-                            return <img src={item} alt="img not available" className='inline-block h-[2vh] mt-[1vh] sm:h-[2.5vh]'  />
+                        item.img2.map((item,index)=>{
+                            return <img src={item} key={index} alt="img not available" className='inline-block h-[2vh] mt-[1vh] sm:h-[2.5vh]'  />
                         })
                     }
           <p className='inline-block transform translate-y-[.7vh] ml-[3vw] text-[#747070] font-bold sm:ml-[1vw]'>{item.text3}</p>
@@ -252,9 +252,9 @@ let change=(index)=>{
 </p>
         <div className='overflow-x-scroll flex gap-[2rem] paras mt-[1.3rem]'>
           {
-            img2Arr.map((item)=>{
+            img2Arr.map((item,index)=>{
               return (
-                <div className='flex flex-col flex-shrink-0 '>
+                <div className='flex flex-col flex-shrink-0 ' key={index}>
                 <Link to={"/details"}>
                   <img src={item.img1} alt="img not available" className='w-[18rem] sm:w-[20rem] h-[8.9rem] sm:h-[11rem] rounded-md filter brightness-50'/>
                   <p className='font-extrabold text-[14px] text-[white] ml-[.7rem] transform translate-y-[-1.3rem]'>{item.text1}</p>
@@ -287,9 +287,9 @@ let change=(index)=>{
 </p>
         <div className='overflow-x-scroll flex gap-[2rem] paras mt-[1.3rem]'>
           {
-            img3Arr.map((item)=>{
+            img3Arr.map((item,index)=>{
               return (
-                <div className='flex flex-col flex-shrink-0 '>
+                <div className='flex flex-col flex-shrink-0 ' key={index}>
                 <Link to={"/details"}>
                   <img src={item.img1} alt="img not available" className='w-[18rem] sm:w-[20rem] h-[8.9rem] sm:h-[11rem] rounded-md filter brightness-75'/>
                   <p className='font-extrabold text-[14px] text-[white] ml-[.7rem] transform translate-y-[-1.3rem]'>{item.text}</p>
@@ -313,9 +313,9 @@ let change=(index)=>{
           <p className='text-[#707070] font-medium'>Exciting offers for more value</p>
           <div className='flex flex-shrink-0 overflow-x-scroll paras gap-[1rem] mt-[1rem]'>
           {
-            dealsArr.map((item)=>{
+            dealsArr.map((item,index)=>{
               return (
-                  <img src={item} alt="img not available" className='h-[9rem] sm:h-[11rem]' />
+                  <img src={item} key={index} alt="img not available" className='h-[9rem] sm:h-[11rem]' />
               )
             })
           }

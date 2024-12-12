@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom';
 
 const NearbyStore = () => {
+    let location=useLocation();
+    let path=location.pathname;
+    
+        useEffect(()=>{
+            window.scrollTo(0,0)
+
+        },[path])      
+    
+
     let storeArr=[{img1:"/photos/str1.webp",btn1:"open now",head:"Cashify Buy Sell Repair Mobile Phone Store ",text:"SHOP NO. G10, JS ARCADE, GROUND FLOOR, Sec 18 Noida",time:"10:00 AM to 09:00 PM",text2:"call store",text3:"get directions"},
         {img1:"/photos/str2.webp",btn1:"open now",head:"Cashify Buy Sell Repair Mobile Phone Store ",text:"Shop No-PVT No-4, Ground Floor Property Number 1E Kamla Nagar Delhi",time:"10:00 AM to 09:00 PM",text2:"call store",text3:"get directions"},
         {img1:"/photos/str3.webp",btn1:"open now",head:"Cashify Buy Sell Repair Mobile Phone Store ",text:"OPP. LATHIYA MOTOR GARAGE, NR. UMIYA CELLULAR, GONDAL ROAD, RAJKOT",time:"10:00 AM to 09:00 PM",text2:"call store",text3:"get directions"},
@@ -61,6 +71,11 @@ useEffect(()=>{
     }
 
 
+    
+    
+
+
+
    }
   return (
     <div className='mx-[2vw]'>
@@ -82,7 +97,7 @@ useEffect(()=>{
                {
          
                 flag.sort().map((item,index)=>{
-                    return <li className={`capitalize font-medium text-[#aaaaaa]  hover:bg-[#93cccc4b] h-[2.4rem] flex items-center rounded-xl pl-[1rem]  cursor-pointer`} onClick={()=>run(index)}>{item}</li>
+                    return <li key={index} className={`capitalize font-medium text-[#aaaaaa]  hover:bg-[#93cccc4b] h-[2.4rem] flex items-center rounded-xl pl-[1rem]  cursor-pointer`} onClick={()=>run(index)}>{item}</li>
                 })
                }
         </ul>
@@ -95,9 +110,9 @@ useEffect(()=>{
     <p className='text-[1.3rem] font-bold capitalize my-[1rem]'>Our exclusive stores</p>
     <div className='flex flex-col gap-[1rem] sm:grid sm:grid-cols-4'>
         {
-            storeArr.map((item)=>{
+            storeArr.map((item,index)=>{
                 return (
-                    <div className='cursor-pointer sm:rounded-xl'>
+                    <div key={index} className='cursor-pointer sm:rounded-xl'>
                         <button className='text-white bg-[#4ADE80] font-bold px-[1.1rem] py-[.4rem] rounded-md absolute z-[2] mt-[.4rem] ml-[1rem]'>{item.btn1}</button>
                         <img src={item.img1} alt="img not available" className='w-[100%]' />
                         <p className='line-clamp-1 font-bold text-[1.3rem] mt-[.3rem]'>{item.head}</p>

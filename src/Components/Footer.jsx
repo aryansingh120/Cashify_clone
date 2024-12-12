@@ -18,8 +18,8 @@ const Footer = () => {
 
                 <div className=' flex gap-[1rem] md:mt-[1rem] '>
                   {
-                     imgArr.map((item)=>{
-                      return <img src={item} alt="img not available" className=' h-[2rem]' />
+                     imgArr.map((item,index)=>{
+                      return <img key={index} src={item} alt="img not available" className=' h-[2rem]' />
                     })
                   }
                 </div>
@@ -31,7 +31,7 @@ const Footer = () => {
                    <ul>
                    {
                     textArr[0].map((item,index)=>{
-                      return <li className={`capitalize text-[#707070] text-[13px] mt-[10px] ml-[1.1rem] ${(index===0)? "text-[1.4rem] font-bold ":"font-medium"}`}>{item}</li>
+                      return <li key={index} className={`capitalize text-[#707070] text-[13px] mt-[10px] ml-[1.1rem] ${(index===0)? "text-[1.4rem] font-bold ":"font-medium"}`}>{item}</li>
                     })
                    }
                    </ul>
@@ -42,7 +42,7 @@ const Footer = () => {
                    <ul>
                    {
                     textArr[1].map((item,index)=>{
-                      return <li className={` capitalize text-[#707070] ml-[1.1rem] text-[13px] mt-[10px] ${(index===0)? "text-[1.4rem] font-bold ":"font-medium"}` }>{item}</li>
+                      return <li key={index} className={` capitalize text-[#707070] ml-[1.1rem] text-[13px] mt-[10px] ${(index===0)? "text-[1.4rem] font-bold ":"font-medium"}` }>{item}</li>
                     })
                    }
                    </ul>
@@ -51,7 +51,7 @@ const Footer = () => {
                    <ul>
                    {
                     textArr[2].map((item,index)=>{
-                      return <li className={`capitalize text-[#707070] ml-[1.1rem] text-[13px] mt-[10px] ${(index===0)? "text-[1.4rem] font-bold ":"font-medium"}`}>{item}</li>
+                      return <li key={index} className={`capitalize text-[#707070] ml-[1.1rem] text-[13px] mt-[10px] ${(index===0)? "text-[1.4rem] font-bold ":"font-medium"}`}>{item}</li>
                     })
                    }
                    </ul>
@@ -60,7 +60,7 @@ const Footer = () => {
                    <ul>
                    {
                     textArr[3].map((item,index)=>{
-                      return <li className={`capitalize text-[#707070] ml-[1.1rem] text-[13px] mt-[10px] ${(index===0)? "text-[1.4rem] font-bold ":"font-medium"}`}>{item}</li>
+                      return <li key={index} className={`capitalize text-[#707070] ml-[1.1rem] text-[13px] mt-[10px] ${(index===0)? "text-[1.4rem] font-bold ":"font-medium"}`}>{item}</li>
                     })
                    }
                    </ul>
@@ -69,7 +69,7 @@ const Footer = () => {
                    <ul>
                    {
                     textArr[4].map((item,index)=>{
-                      return <li className={` capitalize text-[#707070] ml-[1.1rem] text-[13px] mt-[10px] ${(index===0)? "text-[1.4rem] font-bold ":"font-medium"}`}>{item}</li>
+                      return <li key={index} className={` capitalize text-[#707070] ml-[1.1rem] text-[13px] mt-[10px] ${(index===0)? "text-[1.4rem] font-bold ":"font-medium"}`}>{item}</li>
                     })
                    }
                    </ul>

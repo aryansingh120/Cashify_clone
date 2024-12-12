@@ -20,9 +20,9 @@ const Services = () => {
         <p className='text-[20px] font-bold md:text-[22px] xl:text-[25px] '>Our Services</p>
         <div className='pt-[1.5rem] flex flex-row flex-wrap gap-[3vw] md:gap-[1.5vw] xl:gap-[1.53vw]'>
         {
-            imgArr.map((item)=>{
+            imgArr.map((item,index)=>{
                 return (
-                    <Link to={"/details"} className='w-[22.6%] flex flex-col overflow-hidden md:w-[11%]'>
+                    <Link to={"/details"} key={index} className='w-[22.6%] flex flex-col overflow-hidden md:w-[11%]'>
                         <img src={item.img1} alt="img not available" className='mb-[1.4vh]' />
                         <p className='text-center text-[12px] font-bold    md:font-medium'>{item.text1}</p>
                     </Link>
@@ -33,9 +33,9 @@ const Services = () => {
 <p className='text-[20px] font-bold md:text-[22px] xl:text-[25px]  mt-[3rem] capitalize '>Sell your old device now</p>
 <div className='pt-[1.5rem] flex flex-row flex-wrap gap-[3vw] md:gap-[1.5vw] xl:gap-[1.53vw]'>
         {
-            img2Arr.map((item)=>{
+            img2Arr.map((item,index)=>{
                 return (
-                    <div className=' w-[22.6%] flex flex-col overflow-hidden md:w-[11%]'>
+                    <div key={index} className=' w-[22.6%] flex flex-col overflow-hidden md:w-[11%]'>
                     <Link to={"/details"}>
                         <img src={item.img1} alt="img not available" className='mb-[1.4vh]' />
                         <p className='text-center text-[12px] font-bold    md:font-medium'>{item.text1}</p>
@@ -68,8 +68,8 @@ const Services = () => {
 <div className='pl-[3vw] sm:pl-[2vw] '>
                     <p className='font-extrabold text-[2.2vh]'>{item.text2}</p>
                     {
-                        item.img2.map((item)=>{
-                            return <img src={item} alt="img not available" className='inline-block h-[2vh] mt-[1vh] sm:h-[2.5vh]'  />
+                        item.img2.map((item,index)=>{
+                            return <img key={index} src={item} alt="img not available" className='inline-block h-[2vh] mt-[1vh] sm:h-[2.5vh]'  />
                         })
                     }
                     <p className='inline-block transform translate-y-[.7vh] ml-[3vw] text-[#747070] font-bold sm:ml-[1vw]'>{item.text3}</p>

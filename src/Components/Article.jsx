@@ -19,9 +19,9 @@ const Article = () => {
         </div>
         <div className='flex flex-shrink-0 gap-[1.5rem] overflow-x-scroll paras'>
             {
-                 articleArr.map((item)=>{
+                 articleArr.map((item,index)=>{
                     return (
-                        <div className=' flex flex-col flex-shrink-0 w-[82%] sm:w-[32%]'>
+                        <div key={index} className=' flex flex-col flex-shrink-0 w-[82%] sm:w-[32%]'>
                             <img src={item.photo} alt="img not available paras"  className='rounded-lg'/>
                             <p className='font-bold mt-[1.6rem] text-[1.1rem]'>{item.head}</p>
                             <p className='mt-[1rem] text-[#707070] font-medium'>{item.text}</p>
@@ -33,9 +33,9 @@ const Article = () => {
         </div>
         <div className='pt-[2rem] sm:grid sm:grid-cols-2 sm:gap-[2rem] pb-[2rem]'>
          {
-            mobArr.map((item)=>{
+            mobArr.map((item,index)=>{
                 return (
-                    <div className='flex justify-between mt-[1.5rem]'>
+                    <div key={index} className='flex justify-between mt-[1.5rem]'>
                      <div className='w-[34%] '>
                         <img src={item.img1} alt="img not available" className='h-[4.7rem] sm:h-auto rounded-lg ' />
                     </div>
@@ -67,9 +67,9 @@ const Article = () => {
 </p>
         <div className='flex overflow-x-scroll gap-[2rem] paras'>
             {
-                photoArr.map((item)=>{
+                photoArr.map((item,index)=>{
                     return (
-                        <div className='w-[20rem] flex flex-col flex-shrink-0 '>
+                        <div key={index} className='w-[20rem] flex flex-col flex-shrink-0 '>
                                 <img src={item.img1} alt="img not available" className='rounded-xl' />
                                 <p className='font-bold line-clamp-2'>{item.text}</p>
                                 <p className='mt-[1rem] font-medium text-[#707070]'>{item.date}</p>

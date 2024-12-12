@@ -33,7 +33,7 @@ let show=()=>{
       {
         btnArr.map((item,index)=>{         
            return (
-            <button className={`px-[1.3rem] py-[.7rem] text-[12px] font-medium rounded-lg text-[#707070] sm:text-[17px] ${index===count ? 'bg-[#E5E5E5]':'bg-transparent' }`} onClick={()=>press(index)}>{item}</button>
+            <button key={index} className={`px-[1.3rem] py-[.7rem] text-[12px] font-medium rounded-lg text-[#707070] sm:text-[17px] ${index===count ? 'bg-[#E5E5E5]':'bg-transparent' }`} onClick={()=>press(index)}>{item}</button>
           )
         })
       }
@@ -47,10 +47,10 @@ let show=()=>{
 
         ansArr[count].map((item,index)=>{
             return (
-                <details className='border-b-2 pr-[13px] pb-[.7rem] sm:pb-[1.5rem] cursor-pointer' onClick={show}>
+                <details key={index} className='border-b-2 pr-[13px] pb-[.7rem] sm:pb-[1.5rem] cursor-pointer' onClick={show}>
                   <summary className='flex justify-between'>
                   <p className='block text-[14px] sm:text-[18px] text-start font-bold  '>{item.que}</p>
-                  <p className={`text-[20px] ${(rotate==false)? "rotate-[45deg]": "rotate-[90deg]"}`}>+</p>
+                  <p className={`text-[20px] ${(rotate===false)? "rotate-[45deg]": "rotate-[90deg]"}`}>+</p>
                   </summary>
                   <p>{item.ans}</p>
                 </details>
