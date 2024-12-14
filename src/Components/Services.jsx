@@ -16,7 +16,7 @@ const Services = () => {
     
   return (
     <div className='mx-[2vw]'>
-    <img src="/photos/cash2.webp" alt="img not available" />
+    {/* <img src="/photos/cash2.webp" alt="img not available" /> */}
         <p className='text-[20px] font-bold md:text-[22px] xl:text-[25px] '>Our Services</p>
         <div className='pt-[1.5rem] flex flex-row flex-wrap gap-[3vw] md:gap-[1.5vw] xl:gap-[1.53vw]'>
         {

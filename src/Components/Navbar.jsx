@@ -101,7 +101,7 @@ let [display,setDisplay]=useState(false)
 
   
 </div>
-<div className={` grid-cols-5 gap-[1rem] rounded-md shadow-md pl-[2vw] bg-[#FFFFFF] py-[1rem] absolute w-[96%] ${(display==false)? "hidden":"grid"}`}>
+<div className={` grid-cols-5 gap-[1rem] rounded-md shadow-md pl-[2vw] bg-[#FFFFFF] py-[1rem] absolute z-[1] w-[96%] ${(display==false)? "hidden":"grid"}`}>
   {
     indianCities.sort().map((item)=>{
      return <p  className='text-[#a3a2a2] font-medium cursor-pointer' onClick={()=>{setCity(item); setDisplay(false) }} >{item}</p>

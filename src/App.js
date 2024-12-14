@@ -6,12 +6,13 @@ import { Route,Routes,} from "react-router-dom";
 import NearbyStore from "./Components/NearbyStore";
 import SignUp from "./Components/SignUp";
 import Login from "./Components/Login";
+import Scroll from "./Components/Scroll";
 
 function App() {
   return (
     <div className="">
       <Routes>
-      <Route path={"/"} element={<> <Services/> <Stores/> <Questions/> <Article/> </>}/>
+      <Route path={"/"} element={<><Scroll/> <Services/> <Stores/> <Questions/> <Article/> </>}/>
              <Route path={"/details"} element={ <NearbyStore/>}/>
              <Route path={"/home"} element={<> <Services/> <Stores/> <Questions/> <Article/> </>}/>
              <Route path={"/login"} element={ <Login/>}/>
