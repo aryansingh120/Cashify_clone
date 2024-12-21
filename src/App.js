@@ -7,6 +7,7 @@ import NearbyStore from "./Components/NearbyStore";
 import SignUp from "./Components/SignUp";
 import Login from "./Components/Login";
 import Scroll from "./Components/Scroll";
+import MobileDetails from "./Components/MobileDetails";
 
 function App() {
   return (
@@ -14,13 +15,17 @@ function App() {
       <Routes>
       <Route path={"/"} element={<><Scroll/> <Services/> <Stores/> <Questions/> <Article/> </>}/>
              <Route path={"/details"} element={ <NearbyStore/>}/>
-             <Route path={"/home"} element={<> <Services/> <Stores/> <Questions/> <Article/> </>}/>
+             <Route path={"/home"} element={<><Scroll/> <Services/> <Stores/> <Questions/> <Article/> </>}/>
              <Route path={"/login"} element={ <Login/>}/>
              <Route path={"/signup"} element={ <SignUp/>}/>
+             <Route path={"/mobiledetails"} element={ <MobileDetails/>}/>
+
 
 
              </Routes>
      
+      {/* <Services/> */}
+      {/* <MobileDetails/> */}
      
     </div>
   );

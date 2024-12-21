@@ -62,7 +62,7 @@ const Services = () => {
         mobileArr.map((item,index)=>{
             return (
                 <div className={`border rounded-xl w-[13rem] flex-shrink-0 overflow-hidden sm:w-[16rem] ` } key={index} >
-                <Link to={"/details"}>
+                <Link to={"/Mobiledetails"}>
                     <button className=' flex text-[10px] font-extrabold bg-[#F4B146] py-[1vh] px-[2vw] rounded-br-[1.5rem]  transform sm:py-[1.5vh] sm:text-[13px]'>{icon}{item.text1}</button>
                     <img src={item.img1} alt="img not available" className='h-[19vh] ml-[4vw] mt-[-2vh] sm:h-[22vh]' />
 <div className='pl-[3vw] sm:pl-[2vw] '>

@@ -9,11 +9,11 @@ const Login = () => {
    <div className='flex flex-col px-[1rem] gap-[1rem]'>
    <div className='flex flex-col w-[100%]'>
    <label className='capitalize'>email address</label>
-   <input type="email" className='border h-[3.3rem] rounded-md placeholder:font-normal placeholder:text-[1.1rem] outline-[#42C8B7] placeholder:pl-[.4rem]' placeholder='Enter Email' />
+   <input type="email" className=' font-normal border text-[1rem] h-[3.3rem] rounded-md placeholder:font-normal placeholder:text-[1.1rem] outline-[#42C8B7] placeholder:pl-[.4rem]' placeholder='Enter Email' />
    </div>
    <div className='flex flex-col'>
    <label className='capitalize'>Password</label>
-   <input type="password" className='border h-[3.3rem] outline-[#42C8B7] rounded-md placeholder:font-normal placeholder:text-[1.1rem] placeholder:pl-[.4rem]' placeholder='Enter Password' />
+   <input type="password" className=' font-normal text-[1rem] border h-[3.3rem] outline-[#42C8B7] rounded-md placeholder:font-normal placeholder:text-[1rem] placeholder:pl-[.4rem]' placeholder='Enter Password' />
    </div>
    <div className=' mt-[-.9rem] mb-[.5rem]'>
    <p className='text-[1rem] font-normal absolute text-[red] hidden '>**invalid email or password**</p>
